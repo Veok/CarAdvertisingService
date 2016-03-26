@@ -1,9 +1,12 @@
+package Filters;
+import Data.DataBaseOfCars;
+import Data.OfferCar;
 import java.util.List;
 
 /**
  * Created by L on 25.03.2016.
  */
-public class DateOfProduction implements  FilteringCollectionOfOffers {
+public class DateOfProduction implements FilteringCollectionOfOffers {
 
     private String dateOfProduction;
 

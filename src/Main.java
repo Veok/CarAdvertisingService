@@ -1,3 +1,8 @@
+import Data.DataBaseOfCars;
+import Data.OfferCar;
+import Filters.*;
+import Sorts.SortingMenu;
+
 import java.util.Scanner;
 
 /**
@@ -39,6 +44,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         int userChoice;
         boolean quit = false;
+        int userChoice1;
 
 
             System.out.println("What you like to do?");
@@ -73,7 +79,14 @@ public class Main {
                     }
                     else
                         dataBaseOfCars.applyFilrt(filrt1);
-                    }
+                        SortingMenu.sortingSwitch(dataBaseOfCars);
+                        dataBaseOfCars.applyFilrt(filrt1);
+                    break;
+
+                }
+
+
+
                 case 2: {
                     String keyWord;
 
@@ -136,13 +149,6 @@ public class Main {
     }
 
 
-
-
-
-
-
-
-
-    }
+}
 
 

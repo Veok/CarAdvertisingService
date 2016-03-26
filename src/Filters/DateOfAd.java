@@ -1,10 +1,14 @@
-import java.util.Date;
+package Filters;
+
+import Data.DataBaseOfCars;
+import Data.OfferCar;
+
 import java.util.List;
 
 /**
  * Created by L on 25.03.2016.
  */
-public class DateOfAd implements  FilteringCollectionOfOffers {
+public class DateOfAd implements FilteringCollectionOfOffers {
 
     private String dateOfAd;
 

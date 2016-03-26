@@ -1,3 +1,7 @@
+package Filters;
+
+import Data.DataBaseOfCars;
+
 /**
  * Created by L on 23.03.2016.
  */
