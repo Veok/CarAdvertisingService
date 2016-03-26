@@ -20,12 +20,7 @@ public class SortProductionYearByOldest implements SortingCollectionOffers{
     public void displayOffer(DataBaseOfCars offerCar) {
 
         List<OfferCar> offerCarList = offerCar.getOfferCars();
-        Collections.sort(offerCarList, new Comparator<OfferCar>() {
-            @Override
-            public int compare(OfferCar o1, OfferCar o2) {
-                return o1.getDateOfProduction().compareTo(o2.getDateOfProduction());
-            }
-        }) ;
+        Collections.sort((List<OfferCar>) offerCarList, (o1, o2) -> o2.getDateOfProduction().compareTo(o1.getDateOfProduction()));
     }
 }
 
