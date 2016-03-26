@@ -82,11 +82,7 @@ public class Main {
                         SortingMenu.sortingSwitch(dataBaseOfCars);
                         dataBaseOfCars.applyFilrt(filrt1);
                     break;
-
                 }
-
-
-
                 case 2: {
                     String keyWord;
 
@@ -96,6 +92,9 @@ public class Main {
 
                     FilteringCollectionOfOffers filrt2 = new KeyWord(keyWord);
                     dataBaseOfCars.applyFilrt(filrt2);
+                    SortingMenu.sortingSwitch(dataBaseOfCars);
+                    dataBaseOfCars.applyFilrt(filrt2);
+                    break;
 
                 }
                 case 3: {
@@ -107,6 +106,9 @@ public class Main {
 
                     FilteringCollectionOfOffers filrt3 = new DateOfAd(dateOfAd);
                     dataBaseOfCars.applyFilrt(filrt3);
+                    SortingMenu.sortingSwitch(dataBaseOfCars);
+                    dataBaseOfCars.applyFilrt(filrt3);
+                    break;
                 }
                 case 4: {
                     String dateOfProduction;
@@ -117,6 +119,9 @@ public class Main {
 
                     FilteringCollectionOfOffers filrt4= new DateOfProduction(dateOfProduction);
                     dataBaseOfCars.applyFilrt(filrt4);
+                    SortingMenu.sortingSwitch(dataBaseOfCars);
+                    dataBaseOfCars.applyFilrt(filrt4);
+                    break;
                 }
                 case 5:{
                     int lowerLimit;
@@ -137,6 +142,9 @@ public class Main {
                     }
                     else
                         dataBaseOfCars.applyFilrt(filrt5);
+                    SortingMenu.sortingSwitch(dataBaseOfCars);
+                    dataBaseOfCars.applyFilrt(filrt5);
+                    break;
                 }
                 case 6: {
                     dataBaseOfCars.printCars();
