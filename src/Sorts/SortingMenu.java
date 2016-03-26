@@ -43,17 +43,35 @@ public class SortingMenu {
                 switch(choicePrice){
 
                     case 1: {
-
                             SortingCollectionOffers sort1 = new SortPriceByLowest();
                             dataBaseOfCars.applySort(sort1);
                     }
-
                     case 2: {
+                            SortingCollectionOffers sort1 = new SortPriceByHighest();
+                            dataBaseOfCars.applySort(sort1);
+                    }
+                }
+            }
+            case 2: {
+                Scanner y = new Scanner(System.in);
+                int choiceProductionYear;
+                System.out.println("1. Sort by oldest.");
+                System.out.println("2.Sort by newest.");
+                System.out.println("Your choice: ");
+                choiceProductionYear = y.nextInt();
+
+                switch (choiceProductionYear){
+                    case 1: {
+                        SortingCollectionOffers sort2 = new SortProductionYearByOldest();
+                        dataBaseOfCars.applySort(sort2);
+
+                    }
+                    case 2: {
+                        SortingCollectionOffers sort2 = new SortProductionYearByNewest();
+                        dataBaseOfCars.applySort(sort2);
 
                     }
                 }
-
-
             }
         }
 

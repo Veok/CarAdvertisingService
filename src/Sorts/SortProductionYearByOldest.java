@@ -10,7 +10,8 @@ import java.util.List;
 /**
  * Created by L on 26.03.2016.
  */
-public class SortPriceByLowest implements SortingCollectionOffers {
+public class SortProductionYearByOldest implements SortingCollectionOffers{
+
 
     public boolean canDisplay(DataBaseOfCars offerCar) {
         return  offerCar.getOfferCars() != null;
@@ -19,12 +20,12 @@ public class SortPriceByLowest implements SortingCollectionOffers {
     public void displayOffer(DataBaseOfCars offerCar) {
 
         List<OfferCar> offerCarList = offerCar.getOfferCars();
-        Collections.sort((List<OfferCar>) offerCarList, new Comparator<OfferCar>() {
+        Collections.sort(offerCarList, new Comparator<OfferCar>() {
             @Override
             public int compare(OfferCar o1, OfferCar o2) {
-                return Double.compare(o1.getPrice(), o2.getPrice());
+                return o1.getDateOfProduction().compareTo(o2.getDateOfProduction());
             }
-        });
+        }) ;
     }
 }
 
