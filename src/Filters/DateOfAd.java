@@ -16,7 +16,9 @@ public class DateOfAd implements FilteringCollectionOfOffers {
         this.dateOfAd = dateOfAd;
     }
 
-    public boolean canDisplay(DataBaseOfCars offerCar) { return dateOfAd!=null;}
+    public boolean canDisplay(DataBaseOfCars offerCar) {
+        return dateOfAd != null;
+    }
 
     public void displayOffer(DataBaseOfCars offerCar) {
 

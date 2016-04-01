@@ -7,29 +7,28 @@ import java.util.Scanner;
 /**
  * Created by L on 26.03.2016.
  */
-public class SortingMenu {
+public class Menu {
 
 
-    public SortingMenu() {
+    public Menu() {
     }
 
-    public static void sortingSwitch(DataBaseOfCars dataBaseOfCars){
+    public static void sortingSwitch(DataBaseOfCars dataBaseOfCars) {
 
         Scanner in = new Scanner(System.in);
         int userChoice;
-        boolean quit = false;
 
-        System.out.println("What you like to do now?");
+
+        System.out.println("\nWhat you like to do now?");
         System.out.println("1. Sort offers by price.");
         System.out.println("2. Sort offers by year of production.");
         System.out.println("3. Sort offers by date of ad.");
         System.out.println("4. Sort offers by title of ad");
-        System.out.println("5. Quit.");
-        System.out.println("6. Choose number: ");
+        System.out.println("5. Choose number: ");
         userChoice = in.nextInt();
 
 
-        switch(userChoice){
+        switch (userChoice) {
 
             case 1: {
 
@@ -40,16 +39,16 @@ public class SortingMenu {
                 System.out.println("Your choice: ");
                 choicePrice = p.nextInt();
 
-                switch(choicePrice){
+                switch (choicePrice) {
 
                     case 1: {
-                            SortingCollectionOffers sort1 = new SortPriceByLowest();
-                            dataBaseOfCars.applySort(sort1);
-                            break;
+                        SortCollectionOffers sort1 = new PriceByLowest();
+                        dataBaseOfCars.applySort(sort1);
+                        break;
                     }
                     case 2: {
-                            SortingCollectionOffers sort1 = new SortPriceByHighest();
-                            dataBaseOfCars.applySort(sort1);
+                        SortCollectionOffers sort1 = new PriceByHighest();
+                        dataBaseOfCars.applySort(sort1);
                         break;
                     }
                 }
@@ -63,23 +62,23 @@ public class SortingMenu {
                 System.out.println("Your choice: ");
                 choiceProductionYear = y.nextInt();
 
-                switch (choiceProductionYear){
+                switch (choiceProductionYear) {
                     case 1: {
-                        SortingCollectionOffers sort2 = new SortProductionYearByOldest();
+                        SortCollectionOffers sort2 = new ProductionYearByOldest();
                         dataBaseOfCars.applySort(sort2);
                         break;
 
 
                     }
                     case 2: {
-                        SortingCollectionOffers sort2 = new SortProductionYearByNewest();
+                        SortCollectionOffers sort2 = new ProductionYearByNewest();
                         dataBaseOfCars.applySort(sort2);
                         break;
                     }
                 }
                 break;
             }
-            case 3 :{
+            case 3: {
                 Scanner ya = new Scanner(System.in);
                 int choiceAdDate;
                 System.out.println("1.Sort by oldest.");
@@ -87,22 +86,22 @@ public class SortingMenu {
                 System.out.println("Your choice: ");
                 choiceAdDate = ya.nextInt();
 
-                switch (choiceAdDate){
+                switch (choiceAdDate) {
                     case 1: {
-                        SortingCollectionOffers sort3 = new SortDateOfAdByOldest();
+                        SortCollectionOffers sort3 = new DateByOldest();
                         dataBaseOfCars.applySort(sort3);
                         break;
 
                     }
                     case 2: {
-                        SortingCollectionOffers sort3 = new SortDateOfAdByNewest();
+                        SortCollectionOffers sort3 = new DateByNewest();
                         dataBaseOfCars.applySort(sort3);
                         break;
                     }
                 }
                 break;
             }
-            case 4:{
+            case 4: {
                 Scanner t = new Scanner(System.in);
                 int choiceSortOfTitle;
                 System.out.println("1.Sort A-Z");
@@ -110,25 +109,21 @@ public class SortingMenu {
                 System.out.println("Your choice: ");
                 choiceSortOfTitle = t.nextInt();
 
-                switch (choiceSortOfTitle){
+                switch (choiceSortOfTitle) {
                     case 1: {
-                        SortingCollectionOffers sort4 = new SortTitleInAlphabeticalOrder();
+                        SortCollectionOffers sort4 = new AlphabeticalTitle();
                         dataBaseOfCars.applySort(sort4);
                         break;
                     }
-                    case 2:{
-                        SortingCollectionOffers sort4 = new SortTitlneInNonAlphabeticalOrder();
+                    case 2: {
+                        SortCollectionOffers sort4 = new NonAlphabeticalTitle();
                         dataBaseOfCars.applySort(sort4);
                         break;
                     }
                 }
             }
-            case 5: {
-                System.out.println("Goodbye!");
-                break;
-            }
-        }
 
+        }
 
 
     }

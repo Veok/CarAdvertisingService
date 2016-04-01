@@ -1,9 +1,11 @@
 package Data;
 
 import Filters.FilteringCollectionOfOffers;
-import Sorts.SortingCollectionOffers;
+import Sorts.SortCollectionOffers;
+
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * Created by L on 23.03.2016.
  */
@@ -12,9 +14,8 @@ public class DataBaseOfCars {
     private List<OfferCar> offerCars;
 
     public DataBaseOfCars() {
-       offerCars = new ArrayList<>();
+        offerCars = new ArrayList<>();
     }
-
 
 
     public void addCar(OfferCar offerCar) {
@@ -26,20 +27,20 @@ public class DataBaseOfCars {
     }
 
 
-
     public void printCars() {
         for (OfferCar offerCar : offerCars) {
             System.out.println(offerCar);
         }
     }
 
-    public void applyFilrt(FilteringCollectionOfOffers collectionOfOffers){
-    if (collectionOfOffers.canDisplay(this)){
-        collectionOfOffers.displayOffer(this);
+    public void applyFilrt(FilteringCollectionOfOffers collectionOfOffers) {
+        if (collectionOfOffers.canDisplay(this)) {
+            collectionOfOffers.displayOffer(this);
+        }
     }
-}
-    public void applySort(SortingCollectionOffers collectionOfOffers){
-        if (collectionOfOffers.canDisplay(this)){
+
+    public void applySort(SortCollectionOffers collectionOfOffers) {
+        if (collectionOfOffers.canDisplay(this)) {
             collectionOfOffers.displayOffer(this);
         }
     }

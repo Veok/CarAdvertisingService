@@ -1,8 +1,9 @@
 package Filters;
 
-import java.util.List;
 import Data.DataBaseOfCars;
 import Data.OfferCar;
+
+import java.util.List;
 
 /**
  * Created by L on 23.03.2016.
@@ -10,13 +11,13 @@ import Data.OfferCar;
 public class Price implements FilteringCollectionOfOffers {
 
     private double lowerLimit;
-    private  double higherLimit;
+    private double higherLimit;
 
-    public double getHigherLimit() {
+    private double getHigherLimit() {
         return higherLimit;
     }
 
-    public double getLowerLimit() {
+    private double getLowerLimit() {
         return lowerLimit;
     }
 
@@ -26,18 +27,20 @@ public class Price implements FilteringCollectionOfOffers {
         this.lowerLimit = lowerLimit;
     }
 
-    public boolean canDisplay(DataBaseOfCars offerCar) { return lowerLimit>=0;}
+    public boolean canDisplay(DataBaseOfCars offerCar) {
+        return lowerLimit >= 0;
+    }
 
     public void displayOffer(DataBaseOfCars offerCar) {
 
 
         List<OfferCar> offerCarList = offerCar.getOfferCars();
-            offerCarList
-                    .stream()
-                    .filter(car -> (car.getPrice() > getLowerLimit()) && (car.getPrice() < getHigherLimit()))
-                    .forEach(System.out::println);
-        }
+        offerCarList
+                .stream()
+                .filter(car -> (car.getPrice() > getLowerLimit()) && (car.getPrice() < getHigherLimit()))
+                .forEach(System.out::println);
     }
+}
 
 
 

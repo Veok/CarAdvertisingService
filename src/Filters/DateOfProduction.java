@@ -1,6 +1,8 @@
 package Filters;
+
 import Data.DataBaseOfCars;
 import Data.OfferCar;
+
 import java.util.List;
 
 /**
@@ -14,7 +16,9 @@ public class DateOfProduction implements FilteringCollectionOfOffers {
         this.dateOfProduction = dateOfProduction;
     }
 
-    public boolean canDisplay(DataBaseOfCars offerCar) { return dateOfProduction!=null;}
+    public boolean canDisplay(DataBaseOfCars offerCar) {
+        return dateOfProduction != null;
+    }
 
     public void displayOffer(DataBaseOfCars offerCar) {
 

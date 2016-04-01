@@ -1,29 +1,29 @@
 import Data.DataBaseOfCars;
 import Data.OfferCar;
 import Filters.*;
-import Sorts.SortingMenu;
+import Sorts.Menu;
 
 import java.util.Scanner;
 
 /**
  * Created by L on 23.03.2016.
  */
-public class Main {
+public class CarAdvertisingService {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        OfferCar record1 = new OfferCar(2016,03,23,"Super Ford! Buy now!",2000,02,10, "Ford", 1560000, "Focus", 800);
-        OfferCar record2 = new OfferCar(2016,03,22,"Great Car! Occasion!",1998,11,12, "Volkswagen", 2230000, "Golf", 569.99);
-        OfferCar record3 = new OfferCar(2016,02,21,"Looks like new and low mileage!! ",2004,07,01, "Opel", 840000, "Astra", 4625);
-        OfferCar record4 = new OfferCar(2016,03,20, "Beautiful colour! Seat Leon!!!",2009,05,23, "Seat", 2250000, "Leon", 10000);
-        OfferCar record5 = new OfferCar(2016,03,20,"Great Nissan Primera!",2004,12,11, "Nissan", 1880000, "Primera", 1499.99);
-        OfferCar record6 = new OfferCar(2016,03,23,"Super eletric car! MODEL S",2016,01,17, "Tesla", 10000, "Model S", 50000);
-        OfferCar record7 = new OfferCar(2016,01,02,"Brand new car! New model!",2016,01,02, "Tesla", 5, "Model X", 132000);
-        OfferCar record8 = new OfferCar(2015,12,12,"Only for parts",1997,06,29, "Volkswagen", 2900000, "Golf", 499.99);
-        OfferCar record9 = new OfferCar(2016,01,12,"Japanese technical thought!",2002,10,10, "Toyota", 990000, "Corolla", 1200);
-        OfferCar record10 = new OfferCar(2016,02,29,"AUDI A4, only 15k$!",2007,11,05, "Audi", 1920000, "A4", 15000);
-        OfferCar record11 = new OfferCar(2015,11,11,"Like new! FORD FIESTA",2011,12,06, "Ford", 20000, "Fiesta", 14000);
-        OfferCar record12 = new OfferCar(2016,03,10,"GREAT CITROEN C4",2011,04,10, "Citroen", 1350000, "C4", 9999);
+        OfferCar record1 = new OfferCar(2016, 3, 23, "Super Ford! Buy now!", 2000, 2, 10, "Ford", 1560000, "Focus", 800);
+        OfferCar record2 = new OfferCar(2016, 3, 22, "Great Car! Occasion!", 1998, 11, 12, "Volkswagen", 2230000, "Golf", 569.99);
+        OfferCar record3 = new OfferCar(2016, 2, 21, "Looks like new and low mileage!! ", 2004, 7, 1, "Opel", 840000, "Astra", 4625);
+        OfferCar record4 = new OfferCar(2016, 3, 20, "Beautiful colour! Seat Leon!!!", 2009, 5, 23, "Seat", 2250000, "Leon", 10000);
+        OfferCar record5 = new OfferCar(2016, 3, 20, "Great Nissan Primera!", 2004, 12, 11, "Nissan", 1880000, "Primera", 1499.99);
+        OfferCar record6 = new OfferCar(2016, 3, 23, "Super eletric car! MODEL S", 2016, 1, 17, "Tesla", 10000, "Model S", 50000);
+        OfferCar record7 = new OfferCar(2016, 1, 2, "Brand new car! New model!", 2016, 1, 2, "Tesla", 5, "Model X", 132000);
+        OfferCar record8 = new OfferCar(2015, 12, 12, "Only for parts", 1997, 6, 29, "Volkswagen", 2900000, "Golf", 499.99);
+        OfferCar record9 = new OfferCar(2016, 1, 12, "Japanese technical thought!", 2002, 10, 10, "Toyota", 990000, "Corolla", 1200);
+        OfferCar record10 = new OfferCar(2016, 2, 29, "AUDI A4, only 15k$!", 2007, 11, 5, "Audi", 1920000, "A4", 15000);
+        OfferCar record11 = new OfferCar(2015, 11, 11, "Like new! FORD FIESTA", 2011, 12, 6, "Ford", 20000, "Fiesta", 14000);
+        OfferCar record12 = new OfferCar(2016, 3, 10, "GREAT CITROEN C4", 2011, 4, 10, "Citroen", 1350000, "C4", 9999);
 
 
         DataBaseOfCars dataBaseOfCars = new DataBaseOfCars();
@@ -41,15 +41,12 @@ public class Main {
         dataBaseOfCars.addCar(record12);
 
 
-
-
         Scanner in = new Scanner(System.in);
         int userChoice;
         boolean quit = false;
-        int userChoice1;
 
-
-            System.out.println("What you like to do?");
+        do {
+            System.out.println("\nWhat you like to do?");
             System.out.println("1. Flirt offers by price (from/to)");
             System.out.println("2. Flirt offers by keyword");
             System.out.println("3. Flirt offers by date of ad");
@@ -60,7 +57,7 @@ public class Main {
             System.out.println("Choose number: ");
             userChoice = in.nextInt();
 
-            switch (userChoice){
+            switch (userChoice) {
 
                 case 1: {
                     double lowerPrice;
@@ -76,13 +73,12 @@ public class Main {
 
                     FilteringCollectionOfOffers filrt1 = new Price(highPrice, lowerPrice);
 
-                    if(filrt1.canDisplay(dataBaseOfCars) == false){
+                    if (!filrt1.canDisplay(dataBaseOfCars)) {
                         System.out.println("You entered invalid price.");
-                    }
-                    else
+                    } else
                         dataBaseOfCars.applyFilrt(filrt1);
-                        SortingMenu.sortingSwitch(dataBaseOfCars);
-                        dataBaseOfCars.applyFilrt(filrt1);
+                    Menu.sortingSwitch(dataBaseOfCars);
+                    dataBaseOfCars.applyFilrt(filrt1);
                     break;
                 }
                 case 2: {
@@ -94,7 +90,7 @@ public class Main {
 
                     FilteringCollectionOfOffers filrt2 = new KeyWord(keyWord);
                     dataBaseOfCars.applyFilrt(filrt2);
-                    SortingMenu.sortingSwitch(dataBaseOfCars);
+                    Menu.sortingSwitch(dataBaseOfCars);
                     dataBaseOfCars.applyFilrt(filrt2);
                     break;
 
@@ -104,11 +100,11 @@ public class Main {
 
                     System.out.println("Enter a year and a month from which you want search an offer (yyyy-MM)");
                     Scanner oa = new Scanner(System.in);
-                    dateOfAd= oa.nextLine();
+                    dateOfAd = oa.nextLine();
 
                     FilteringCollectionOfOffers filrt3 = new DateOfAd(dateOfAd);
                     dataBaseOfCars.applyFilrt(filrt3);
-                    SortingMenu.sortingSwitch(dataBaseOfCars);
+                    Menu.sortingSwitch(dataBaseOfCars);
                     dataBaseOfCars.applyFilrt(filrt3);
                     break;
                 }
@@ -119,13 +115,13 @@ public class Main {
                     Scanner op = new Scanner(System.in);
                     dateOfProduction = op.nextLine();
 
-                    FilteringCollectionOfOffers filrt4= new DateOfProduction(dateOfProduction);
+                    FilteringCollectionOfOffers filrt4 = new DateOfProduction(dateOfProduction);
                     dataBaseOfCars.applyFilrt(filrt4);
-                    SortingMenu.sortingSwitch(dataBaseOfCars);
+                    Menu.sortingSwitch(dataBaseOfCars);
                     dataBaseOfCars.applyFilrt(filrt4);
                     break;
                 }
-                case 5:{
+                case 5: {
                     int lowerLimit;
                     int higherLimit;
 
@@ -139,23 +135,25 @@ public class Main {
 
                     FilteringCollectionOfOffers filrt5 = new Mileage(higherLimit, lowerLimit);
 
-                    if(filrt5.canDisplay(dataBaseOfCars) == false){
+                    if (!filrt5.canDisplay(dataBaseOfCars)) {
                         System.out.println("You entered invalid mileage.");
-                    }
-                    else
+                    } else
                         dataBaseOfCars.applyFilrt(filrt5);
-                    SortingMenu.sortingSwitch(dataBaseOfCars);
+                    Menu.sortingSwitch(dataBaseOfCars);
                     dataBaseOfCars.applyFilrt(filrt5);
                     break;
                 }
                 case 6: {
                     dataBaseOfCars.printCars();
+                    break;
                 }
                 case 7: {
+                    quit = true;
                     System.out.println("\nGoodbye");
                     break;
                 }
             }
+        } while (!quit);
     }
 
 

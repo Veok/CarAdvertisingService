@@ -1,8 +1,8 @@
 package Data;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.text.SimpleDateFormat;
 
 /**
  * Created by L on 23.03.2016.
@@ -35,11 +35,6 @@ public class OfferCar {
         return dateOfOffer;
     }
 
-    public OfferCar setDateOfOffer(Date dateOfOffer) {
-        this.dateOfOffer = dateOfOffer;
-        return this;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -53,83 +48,46 @@ public class OfferCar {
         return dateOfProduction;
     }
 
-    public OfferCar setDateOfProduction(Date dateOfProduction) {
-        this.dateOfProduction = dateOfProduction;
-        return this;
-    }
-
-    public String getMark() {
-        return mark;
-    }
-
-    public OfferCar setMark(String mark) {
-        this.mark = mark;
-        return this;
-    }
-
     public double getMileage() {
         return mileage;
     }
 
-    public OfferCar setMileage(int mileage) {
-        this.mileage = mileage;
-        return this;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public OfferCar setModel(String model) {
-        this.model = model;
-        return this;
-    }
 
     public double getPrice() {
         return price;
     }
 
-    public OfferCar setPrice(double price) {
-        this.price = price;
-        return this;
-    }
-
-    public String data1() {
+    private String data1() {
         SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
-        String dateOfProduction1 = DATE_FORMAT.format(dateOfProduction);
-        return dateOfProduction1;
+        return DATE_FORMAT.format(dateOfProduction);
     }
 
-    public String data2() {
+    private String data2() {
         SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
-        String dateOfOffer1 = DATE_FORMAT.format(dateOfOffer);
-        return dateOfOffer1;
+        return DATE_FORMAT.format(dateOfOffer);
     }
 
-    public  String data3(){
+    public String data3() {
         SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM");
-        String dateOfOffer1 = DATE_FORMAT.format(dateOfOffer);
-        return dateOfOffer1;
-}
+        return DATE_FORMAT.format(dateOfOffer);
+    }
 
     public String data4() {
         SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy");
-        String dateOfProduction1 = DATE_FORMAT.format(dateOfProduction);
-        return dateOfProduction1;
+        return DATE_FORMAT.format(dateOfProduction);
     }
-
 
 
     @Override
     public String toString() {
         return
-                "Date of Ofert: "+data2() +
-                        " | Title: " + title+
-                        " | Mark: "+mark +
-                        " | Model: "+model +
-                        " | Date of Production: "+ data1() +
-                        " | Mileage: "+ mileage +
-                        " | Price: " + price +"$";
+                "Date of Ofert: " + data2() +
+                        " | Title: " + title +
+                        " | Mark: " + mark +
+                        " | Model: " + model +
+                        " | Date of Production: " + data1() +
+                        " | Mileage: " + mileage +
+                        " | Price: " + price + "$";
 
     }
 

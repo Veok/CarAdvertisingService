@@ -1,6 +1,8 @@
 package Filters;
+
 import Data.DataBaseOfCars;
 import Data.OfferCar;
+
 import java.util.List;
 
 /**
@@ -14,7 +16,9 @@ public class KeyWord implements FilteringCollectionOfOffers {
         this.keyWord = keyWord;
     }
 
-    public boolean canDisplay(DataBaseOfCars offerCar) { return keyWord!=null;}
+    public boolean canDisplay(DataBaseOfCars offerCar) {
+        return keyWord != null;
+    }
 
     public void displayOffer(DataBaseOfCars offerCar) {
 
@@ -24,5 +28,5 @@ public class KeyWord implements FilteringCollectionOfOffers {
                 .filter(cars -> cars.getTitle().contains(keyWord))
                 .forEach(System.out::println);
     }
-    }
+}
 

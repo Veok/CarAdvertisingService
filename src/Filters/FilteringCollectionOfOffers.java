@@ -7,6 +7,7 @@ import Data.DataBaseOfCars;
  */
 public interface FilteringCollectionOfOffers {
     boolean canDisplay(DataBaseOfCars offerCar);
+
     void displayOffer(DataBaseOfCars offerCar);
 
 
