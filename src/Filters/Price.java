@@ -16,19 +16,10 @@ public class Price implements FilteringCollectionOfOffers {
         return higherLimit;
     }
 
-    public Price setHigherLimit(double higherLimit) {
-        this.higherLimit = higherLimit;
-        return this;
-    }
-
     public double getLowerLimit() {
         return lowerLimit;
     }
 
-    public Price setLowerLimit(double lowerLimit) {
-        this.lowerLimit = lowerLimit;
-        return this;
-    }
 
     public Price(double higherLimit, double lowerLimit) {
         this.higherLimit = higherLimit;

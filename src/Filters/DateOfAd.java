@@ -16,16 +16,6 @@ public class DateOfAd implements FilteringCollectionOfOffers {
         this.dateOfAd = dateOfAd;
     }
 
-    public String getDateOfAd() {
-        return dateOfAd;
-    }
-
-    public DateOfAd setDateOfAd(String dateOfAd) {
-        this.dateOfAd = dateOfAd;
-        return this;
-    }
-
-
     public boolean canDisplay(DataBaseOfCars offerCar) { return dateOfAd!=null;}
 
     public void displayOffer(DataBaseOfCars offerCar) {

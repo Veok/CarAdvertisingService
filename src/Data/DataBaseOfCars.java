@@ -15,6 +15,8 @@ public class DataBaseOfCars {
        offerCars = new ArrayList<>();
     }
 
+
+
     public void addCar(OfferCar offerCar) {
         offerCars.add(offerCar);
     }

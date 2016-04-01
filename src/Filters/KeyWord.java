@@ -10,15 +10,6 @@ public class KeyWord implements FilteringCollectionOfOffers {
 
     private String keyWord;
 
-    public String getKeyWord() {
-        return keyWord;
-    }
-
-    public KeyWord setKeyWord(String keyWord) {
-        this.keyWord = keyWord;
-        return this;
-    }
-
     public KeyWord(String keyWord) {
         this.keyWord = keyWord;
     }

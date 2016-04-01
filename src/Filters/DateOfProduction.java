@@ -14,15 +14,6 @@ public class DateOfProduction implements FilteringCollectionOfOffers {
         this.dateOfProduction = dateOfProduction;
     }
 
-    public String getDateOfProduction() {
-        return dateOfProduction;
-    }
-
-    public DateOfProduction setDateOfProduction(String dateOfProduction) {
-        this.dateOfProduction = dateOfProduction;
-        return this;
-    }
-
     public boolean canDisplay(DataBaseOfCars offerCar) { return dateOfProduction!=null;}
 
     public void displayOffer(DataBaseOfCars offerCar) {

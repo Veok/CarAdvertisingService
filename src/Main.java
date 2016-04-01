@@ -41,6 +41,8 @@ public class Main {
         dataBaseOfCars.addCar(record12);
 
 
+
+
         Scanner in = new Scanner(System.in);
         int userChoice;
         boolean quit = false;
@@ -135,7 +137,7 @@ public class Main {
                     Scanner hl = new Scanner(System.in);
                     higherLimit = hl.nextInt();
 
-                    FilteringCollectionOfOffers filrt5 = new Price(higherLimit, lowerLimit);
+                    FilteringCollectionOfOffers filrt5 = new Mileage(higherLimit, lowerLimit);
 
                     if(filrt5.canDisplay(dataBaseOfCars) == false){
                         System.out.println("You entered invalid mileage.");
