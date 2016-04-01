@@ -4,7 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-
+/**
+ * Created by L on 25.03.2016.
+ */
 public class OfferCar {
 
     private String model;
