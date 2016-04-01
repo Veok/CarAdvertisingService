@@ -4,9 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- * Created by L on 23.03.2016.
- */
+
 public class OfferCar {
 
     private String model;
@@ -37,11 +35,6 @@ public class OfferCar {
 
     public String getTitle() {
         return title;
-    }
-
-    public OfferCar setTitle(String title) {
-        this.title = title;
-        return this;
     }
 
     public Date getDateOfProduction() {
@@ -81,7 +74,7 @@ public class OfferCar {
     @Override
     public String toString() {
         return
-                "Date of Ofert: " + data2() +
+                "Date of Offer " + data2() +
                         " | Title: " + title +
                         " | Mark: " + mark +
                         " | Model: " + model +
